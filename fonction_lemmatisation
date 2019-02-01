@@ -20,5 +20,5 @@ def lemma(p):
     if v in adv:
         print(lemmatizer.lemmatize(p, pos="r"))
 
-lemma("better") #returns well
-lemma("going") #returns go
+lemma("better") #shows well
+lemma("going") #shows go
