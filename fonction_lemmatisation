@@ -1,0 +1,25 @@
+from nltk.stem import WordNetLemmatizer
+from nltk.stem import PorterStemmer
+import nltk
+
+
+def lemma(p):
+    verb=["VB","VBD","VBG","VBN","VBP","VBZ"]
+    noun=["NN","NNS","NNP","NNPS"]
+    adj=["JJ","JJS","JJR"]
+    adv=["RB", "RBR", "RBS", "RP"]
+    lemmatizer = WordNetLemmatizer()
+    result = nltk.pos_tag([p])
+    v=[x[1] for x in result][0]
+    print(v)
+    if v in verb:
+        print(lemmatizer.lemmatize(p, pos="v"))
+    if v in noun:
+         print(lemmatizer.lemmatize(p, pos="n"))
+    if v in adj:
+        print(lemmatizer.lemmatize(p, pos="a"))
+    if v in adv:
+        print(lemmatizer.lemmatize(p, pos="r"))
+
+lemma("better") #returns well
+lemma("going") #returns go
